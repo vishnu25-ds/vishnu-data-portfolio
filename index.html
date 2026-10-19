@@ -256,6 +256,29 @@
 
 /* ===== Section heading icons ===== */
 h2 .sec-icon{ color:var(--accent); margin-right:.55rem; font-size:.9em; width:1.2em; text-align:center; }
+
+/* ===== Nav hover: each link zooms with its own color ===== */
+.menu a{ --c:var(--accent); transition:transform .2s ease, color .2s ease, background-color .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.menu a:nth-child(1){ --c:#5eead4; }  /* About - teal */
+.menu a:nth-child(2){ --c:#60a5fa; }  /* Skills - blue */
+.menu a:nth-child(3){ --c:#f59e0b; }  /* Experience - amber */
+.menu a:nth-child(4){ --c:#a78bfa; }  /* Projects - purple */
+.menu a:nth-child(5){ --c:#22c55e; }  /* Education - green */
+.menu a:nth-child(6){ --c:#f472b6; }  /* Certifications - pink */
+.menu a:nth-child(7){ --c:#facc15; }  /* Contact - yellow */
+.menu a:hover, .menu a:focus-visible{
+  color:var(--c); opacity:1; transform:scale(1.15);
+  border-color:var(--c);
+  background:color-mix(in srgb, var(--c) 14%, transparent);
+  box-shadow:0 0 14px color-mix(in srgb, var(--c) 35%, transparent);
+}
+@media (prefers-reduced-motion: reduce){ .menu a:hover, .menu a:focus-visible{ transform:none; } }
+
+/* ===== Section heading colors (match the menu) ===== */
+#about{ --sec:#5eead4; } #skills{ --sec:#60a5fa; } #experience{ --sec:#f59e0b; }
+#projects{ --sec:#a78bfa; } #education{ --sec:#22c55e; } #certifications{ --sec:#f472b6; } #contact{ --sec:#facc15; }
+section h2{ color:var(--sec, var(--text)); }
+section h2 .sec-icon{ color:var(--sec, var(--accent)); }
   </style>
   <!-- Add under your Font Awesome link -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.17.0/devicon.min.css">
@@ -312,7 +335,7 @@ h2 .sec-icon{ color:var(--accent); margin-right:.55rem; font-size:.9em; width:1.
     <!-- ===== About ===== -->
     <section id="about">
       <div class="container">
-        <h2><i class="fa-solid fa-user sec-icon" aria-hidden="true"></i>About <span style="color:#64FAF5">me</span></h2>
+        <h2><i class="fa-solid fa-user sec-icon" aria-hidden="true"></i>About me</h2>
         <div class="grid-2">
           <div class="card">
             <p>
@@ -550,7 +573,7 @@ h2 .sec-icon{ color:var(--accent); margin-right:.55rem; font-size:.9em; width:1.
     <!-- ===== Contact ===== -->
     <section id="contact">
       <div class="container">
-        <h2><i class="fa-solid fa-envelope-open-text sec-icon" aria-hidden="true"></i>Get In <span style="color:#64FAF5">Touch</span></h2>
+        <h2><i class="fa-solid fa-envelope-open-text sec-icon" aria-hidden="true"></i>Get In Touch</h2>
         <div class="contact-grid">
           <!-- Left: Contact Information -->
           <div class="card">
