@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vishnu Vardhan Rao V</title>
+<meta name="description" content="Vishnu Vardhan Rao V, data analyst and data science graduate. Python, SQL, R, Power BI, Tableau and machine learning.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500;62..125,700;62..125,800&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout: cobalt hero band holding a "describe()" table of the person; below, case-study rows with oversized metrics, a ruled timeline, and a stack index. */
+:root{
+  --paper:#f4f6fb; --card:#ffffff; --ink:#111633; --soft:#565d7a; --rule:#dde1ee;
+  --band:#1f3fd1; --band-ink:#ffffff; --band-soft:#c3ccf7; --hi:#ffcf33; --accent:#1f3fd1;
+  --display:"Archivo", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --body:"Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --paper:#0d1022; --card:#151a33; --ink:#eceffa; --soft:#a2a9c6; --rule:#262c4a;
+  --band:#1a2a8c; --band-ink:#ffffff; --band-soft:#b4bff0; --hi:#ffd552; --accent:#8fa4ff; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --paper:#0d1022; --card:#151a33; --ink:#eceffa; --soft:#a2a9c6; --rule:#262c4a;
+  --band:#1a2a8c; --band-ink:#ffffff; --band-soft:#b4bff0; --hi:#ffd552; --accent:#8fa4ff; color-scheme:dark }
+
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--band)}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--hi);outline-offset:3px;border-radius:4px}
+.in{max-width:1100px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance}
+p{margin:0}
+
+/* Band */
+.band{background:var(--band);color:var(--band-ink)}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:18px}
+.mark{font-family:var(--mono);font-size:.85rem;color:var(--band-soft)}
+.mark b{color:var(--hi);font-weight:500}
+.links{display:flex;gap:18px;flex-wrap:wrap}
+.links a{color:var(--band-ink);text-decoration:none;font-size:.92rem;border-bottom:1px solid transparent}
+.links a:hover{border-color:var(--hi)}
+@media (max-width:700px){.links{display:none}}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:end;padding-block:56px 64px}
+.hero > *{min-width:0}
+.hero h1{font-weight:800;font-stretch:118%;font-size:clamp(2.6rem,7vw,5.2rem);line-height:.95;letter-spacing:-.02em;text-transform:uppercase}
+.hero h1 span{display:block;color:var(--hi)}
+.tagline{font-size:clamp(1.05rem,2vw,1.25rem);color:var(--band-soft);max-width:44ch;margin-top:20px}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:4px;font:600 .95rem var(--body);text-decoration:none;border:1.5px solid var(--band-ink);color:var(--band-ink)}
+.btn.solid{background:var(--hi);border-color:var(--hi);color:#111633}
+.btn:hover{transform:translateY(-1px)}
+.df{font-family:var(--mono);font-size:.85rem;background:rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.18);border-radius:6px;overflow:hidden}
+.df .cmd{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.18);color:var(--band-soft)}
+.df .cmd b{color:var(--hi);font-weight:500}
+.df table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.df td{padding:7px 14px;border-bottom:1px solid rgba(255,255,255,.08)}
+.df tr:last-child td{border-bottom:0}
+.df td:first-child{color:var(--band-soft);width:48%}
+.df td:last-child{text-align:right}
+@media (max-width:860px){.hero{grid-template-columns:1fr;gap:32px;padding-block:36px 44px}}
+
+/* Sections */
+main section{padding-block:64px;border-bottom:1px solid var(--rule)}
+.sh{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:32px;flex-wrap:wrap}
+.sh h2{font-weight:800;font-stretch:112%;font-size:clamp(1.8rem,4vw,2.6rem);letter-spacing:-.01em;text-transform:uppercase}
+.sh .k{font-family:var(--mono);font-size:.8rem;color:var(--soft)}
+@media (max-width:600px){main section{padding-block:44px}}
+
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:40px}
+.about > *{min-width:0}
+.about p{max-width:62ch;font-size:1.05rem}
+.about p + p{margin-top:14px;color:var(--soft)}
+.focus{display:grid;gap:0;border-top:2px solid var(--ink)}
+.focus div{padding:10px 0;border-bottom:1px solid var(--rule);font-weight:500;display:flex;justify-content:space-between;gap:12px}
+.focus span{font-family:var(--mono);font-size:.8rem;color:var(--soft)}
+@media (max-width:820px){.about{grid-template-columns:1fr}}
+
+/* Case studies */
+.cases{display:grid;gap:16px}
+.case{display:grid;grid-template-columns:200px 1fr;gap:28px;background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:24px}
+.case > *{min-width:0}
+.big{font-family:var(--display);font-weight:800;font-stretch:110%;font-size:3rem;line-height:1;color:var(--accent);font-variant-numeric:tabular-nums}
+.big-k{font-size:.85rem;color:var(--soft);margin-top:6px}
+.case h3{font-size:1.35rem;font-weight:700}
+.case p{color:var(--soft);margin-top:8px;max-width:62ch}
+.meta{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:14px;font-family:var(--mono);font-size:.8rem}
+.meta .t{color:var(--ink)}
+.meta .m{color:var(--accent)}
+@media (max-width:640px){.case{grid-template-columns:1fr;gap:12px}.big{font-size:2.4rem}}
+
+/* Timeline */
+.tl{display:grid;gap:0}
+.job{display:grid;grid-template-columns:200px 1fr;gap:28px;padding-block:24px;border-top:2px solid var(--ink)}
+.job + .job{border-top-width:1px;border-top-color:var(--rule)}
+.job > *{min-width:0}
+.when{font-family:var(--mono);font-size:.85rem;color:var(--soft);font-variant-numeric:tabular-nums}
+.job h3{font-size:1.25rem;font-weight:700}
+.where{color:var(--soft);margin-top:2px}
+.job ul{margin:12px 0 0;padding-left:18px;display:grid;gap:6px}
+.job li::marker{color:var(--accent)}
+.n{font-family:var(--mono);font-weight:500;background:var(--hi);color:#111633;padding:0 4px;border-radius:2px;font-variant-numeric:tabular-nums}
+@media (max-width:640px){.job{grid-template-columns:1fr;gap:6px}}
+
+/* Stack index */
+.stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0 32px}
+.row{display:grid;grid-template-columns:120px 1fr;gap:12px;padding-block:12px;border-bottom:1px solid var(--rule)}
+.row > *{min-width:0}
+.row dt{font-family:var(--mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);padding-top:2px}
+.row dd{margin:0}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.contact > *{min-width:0}
+.contact h3{font-size:clamp(1.6rem,3.6vw,2.4rem);font-weight:800;font-stretch:110%;line-height:1.05}
+.contact .lead{color:var(--soft);margin-top:12px;max-width:44ch}
+.cl{display:grid;border-top:2px solid var(--ink)}
+.ci{display:grid;grid-template-columns:90px 1fr auto;gap:12px;align-items:center;padding-block:14px;border-bottom:1px solid var(--rule)}
+.ci > *{min-width:0}
+.ci .l{font-family:var(--mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--soft)}
+.ci .v{overflow-wrap:anywhere;font-weight:500}
+.ci .v a{text-decoration:none}
+.cp{font:500 .8rem var(--body);padding:6px 10px;border-radius:4px;border:1px solid var(--rule);background:var(--card);color:var(--ink);cursor:pointer}
+.cp:hover{border-color:var(--accent)}
+@media (max-width:820px){.contact{grid-template-columns:1fr}}
+@media (max-width:440px){.ci{grid-template-columns:1fr auto}.ci .l{grid-column:1/-1}}
+
+footer{padding-block:28px 48px;color:var(--soft);font-size:.85rem}
+</style>
+</head>
+<body>
+
+<div class="band">
+  <div class="in top">
+    <div class="mark">vishnu<b>.</b>analyst</div>
+    <nav class="links" aria-label="Sections"><a href="#about">About</a><a href="#work">Work</a><a href="#experience">Experience</a><a href="#stack">Stack</a><a href="#contact">Contact</a></nav>
+  </div>
+  <div class="in hero">
+    <div>
+      <h1>Vishnu Vardhan <span>Rao V</span></h1>
+      <p class="tagline">Data analyst and data science graduate. I build dashboards, forecasts and ML models that people actually use to make decisions.</p>
+      <div class="cta">
+        <a class="btn solid" href="#work">See my work</a>
+        <a class="btn" href="https://www.linkedin.com/in/vishnu-vardhan-rao-v-62977440" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/vishnu25-ds" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="df" aria-label="Quick facts">
+      <div class="cmd">&gt;&gt;&gt; vishnu.<b>describe</b>()</div>
+      <table>
+        <tr><td>role</td><td>Data Analyst</td></tr>
+        <tr><td>years_in_analytics</td><td>6+</td></tr>
+        <tr><td>based_in</td><td>Memphis, TN</td></tr>
+        <tr><td>core_stack</td><td>Python · SQL · R</td></tr>
+        <tr><td>bi_tools</td><td>Power BI · Tableau</td></tr>
+        <tr><td>best_test_r2</td><td>0.92</td></tr>
+        <tr><td>open_to</td><td>Full-time roles</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<main class="in">
+  <section id="about">
+    <div class="sh"><h2>About</h2><span class="k">who I am</span></div>
+    <div class="about">
+      <div>
+        <p>I'm a data science graduate with six years of hands-on analytics work behind me. As a senior data analyst at a college in India, I built the dashboards faculty relied on, moved years of records from legacy systems into SQL, and forecast enrollment with Python models.</p>
+        <p>I like clear insights, models I can explain, and working closely with the people who use the numbers. Lately I'm focused on feature engineering for tabular ML, reproducible analytics, and building with LLMs and agents.</p>
+      </div>
+      <div class="focus" aria-label="Focus areas">
+        <div>Exploratory data analysis <span>EDA</span></div>
+        <div>Predictive modeling <span>ML</span></div>
+        <div>Dashboards and reporting <span>BI</span></div>
+        <div>Sentiment and text analysis <span>NLP</span></div>
+        <div>Data migration and SQL tuning <span>SQL</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="sh"><h2>Selected work</h2><span class="k">3 projects</span></div>
+    <div class="cases">
+      <article class="case">
+        <div><div class="big">0.92</div><div class="big-k">R² on held-out test data</div></div>
+        <div>
+          <h3>Real Estate Price Prediction</h3>
+          <p>Compared linear regression, random forest and XGBoost to predict home prices. Feature engineering and outlier treatment did most of the work.</p>
+          <div class="meta"><span class="t">Scikit-learn · XGBoost · Pandas</span><span class="m">RMSE −18%</span></div>
+        </div>
+      </article>
+      <article class="case">
+        <div><div class="big">−35%</div><div class="big-k">time to find results</div></div>
+        <div>
+          <h3>Search Engine Interface</h3>
+          <p>A Flask app that scrapes websites, cleans and stems the text, and ranks pages by cosine similarity to the query.</p>
+          <div class="meta"><span class="t">Python · Flask · NLP · Web scraping</span><span class="m">relevance +25%</span></div>
+        </div>
+      </article>
+      <article class="case">
+        <div><div class="big">+20%</div><div class="big-k">forecast accuracy</div></div>
+        <div>
+          <h3>Predictive Insights into Hotel Reservations</h3>
+          <p>Found cancellation patterns and peak booking periods in reservation data, and used them to improve demand forecasts.</p>
+          <div class="meta"><span class="t">Pandas · Visualization · Forecasting</span><span class="m">room utilization +15%</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="sh"><h2>Experience</h2><span class="k">2017 – 2025</span></div>
+    <div class="tl">
+      <article class="job">
+        <div class="when">Mar 2024 – May 2025</div>
+        <div>
+          <h3>Research Assistant</h3>
+          <div class="where">University of Memphis · Memphis, TN</div>
+          <ul>
+            <li>Resolved <span class="n">300+</span> software, hardware and network issues with a <span class="n">90%</span> first-call resolution rate.</li>
+            <li>Managed service tickets and IT inventory, and supported system upgrades.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="job">
+        <div class="when">Aug 2017 – Jul 2023</div>
+        <div>
+          <h3>Senior Data Analyst</h3>
+          <div class="where">Hindu Junior College for Girls · India</div>
+          <ul>
+            <li>Led data initiatives that lifted academic outcomes <span class="n">15%</span> and retention <span class="n">12%</span> year over year.</li>
+            <li>Built Power BI and Tableau dashboards that cut faculty review time by <span class="n">40%</span>.</li>
+            <li>Migrated legacy records to SQL, improving retrieval accuracy by <span class="n">25%</span>.</li>
+            <li>Automated attendance tracking: <span class="n">20%</span> more accurate, <span class="n">15%</span> faster.</li>
+            <li>Built Python models with <span class="n">95%</span> enrollment forecast accuracy.</li>
+            <li>Analyzed sentiment in student feedback, contributing to a <span class="n">10%</span> rise in satisfaction.</li>
+            <li>Kept data governance GDPR-compliant and trained <span class="n">50+</span> staff on analytics tools.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="stack">
+    <div class="sh"><h2>Stack</h2><span class="k">tools I work with</span></div>
+    <dl class="stack" style="margin:0">
+      <div class="row"><dt>Languages</dt><dd>Python, SQL (MySQL), R, MATLAB, Bash, HTML/CSS</dd></div>
+      <div class="row"><dt>Data</dt><dd>Pandas, NumPy, PySpark, Excel, web scraping, Jupyter</dd></div>
+      <div class="row"><dt>ML</dt><dd>Scikit-learn, XGBoost, TensorFlow, PyTorch, NLTK</dd></div>
+      <div class="row"><dt>BI &amp; viz</dt><dd>Power BI, Tableau, Matplotlib, Seaborn, Streamlit</dd></div>
+      <div class="row"><dt>GenAI</dt><dd>LLMs, LangChain, LangGraph, AI agents</dd></div>
+      <div class="row"><dt>Cloud</dt><dd>GCP, Cloud SQL, MongoDB, Docker, Git and GitHub</dd></div>
+    </dl>
+  </section>
+
+  <section id="contact" style="border-bottom:0">
+    <div class="contact">
+      <div>
+        <h3>Hiring for a data role? Let's talk.</h3>
+        <p class="lead">I'm open to full-time analyst and data science positions, and to research collaborations.</p>
+      </div>
+      <div class="cl">
+        <div class="ci"><span class="l">Email</span><span class="v" id="ce"><a href="mailto:vishnu.mathematica@yahoo.com">vishnu.mathematica@yahoo.com</a></span><button class="cp" type="button" data-c="ce">Copy</button></div>
+        <div class="ci"><span class="l">Phone</span><span class="v" id="cph">+1 (901) 468-4971</span><button class="cp" type="button" data-c="cph">Copy</button></div>
+        <div class="ci"><span class="l">LinkedIn</span><span class="v"><a href="https://www.linkedin.com/in/vishnu-vardhan-rao-v-62977440" target="_blank" rel="noopener">vishnu-vardhan-rao-v</a></span><span></span></div>
+        <div class="ci"><span class="l">GitHub</span><span class="v"><a href="https://github.com/vishnu25-ds" target="_blank" rel="noopener">vishnu25-ds</a></span><span></span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="in">© 2026 Vishnu Vardhan Rao V · Memphis, Tennessee</footer>
+
+<script>
+document.querySelectorAll('.cp').forEach(function(b){
+  b.addEventListener('click',function(){
+    var el=document.getElementById(b.dataset.c),t=el.textContent.trim();
+    var reset=function(){setTimeout(function(){b.textContent='Copy'},1600)};
+    var sel=function(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected';reset()};
+    try{navigator.clipboard.writeText(t).then(function(){b.textContent='Copied';reset()},sel)}catch(e){sel()}
+  });
+});
+</script>
+</body>
+</html>
