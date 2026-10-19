@@ -253,6 +253,9 @@
 @media (max-width:600px){  .skills-grid{ grid-template-columns: repeat(3, minmax(110px,1fr)); } }
 @media (max-width:420px){  .skills-grid{ grid-template-columns: repeat(2, minmax(110px,1fr)); } }
 
+
+/* ===== Section heading icons ===== */
+h2 .sec-icon{ color:var(--accent); margin-right:.55rem; font-size:.9em; width:1.2em; text-align:center; }
   </style>
   <!-- Add under your Font Awesome link -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.17.0/devicon.min.css">
@@ -273,6 +276,7 @@
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#education">Education</a>
+        <a href="#certifications">Certifications</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -308,7 +312,7 @@
     <!-- ===== About ===== -->
     <section id="about">
       <div class="container">
-        <h2>About <span style="color:#64FAF5">me</span></h2>
+        <h2><i class="fa-solid fa-user sec-icon" aria-hidden="true"></i>About <span style="color:#64FAF5">me</span></h2>
         <div class="grid-2">
           <div class="card">
             <p>
@@ -339,11 +343,10 @@
     <!-- ===== Skills ===== -->
     <section id="skills">
       <div class="container">
-        <h2>Skills</h2>
         <div class="grid-3">
           <section id="skills">
   <div class="container">
-    <h2>Skills</h2>
+    <h2><i class="fa-solid fa-code sec-icon" aria-hidden="true"></i>Skills</h2>
 
     <div class="skills-wrap">
       <div class="skills-grid">
@@ -406,7 +409,7 @@
     <!-- ===== Experience ===== -->
     <section id="experience">
       <div class="container">
-        <h2>Experience</h2>
+        <h2><i class="fa-solid fa-briefcase sec-icon" aria-hidden="true"></i>Experience</h2>
         <div class="timeline">
           <div class="timeline-item">
             <div><span class="pill">Mar 2024 – May 2025</span></div>
@@ -440,7 +443,7 @@
     <!-- ===== Projects ===== -->
     <section id="projects">
       <div class="container">
-        <h2>Projects</h2>
+        <h2><i class="fa-solid fa-diagram-project sec-icon" aria-hidden="true"></i>Projects</h2>
         <div class="grid-3">
           <div class="project">
             <h3>Search Engine Interface (Web Scraping)</h3>
@@ -474,10 +477,80 @@
       </div>
     </section>
 
+    <!-- ===== Education ===== -->
+    <section id="education">
+      <div class="container">
+        <h2><i class="fa-solid fa-graduation-cap sec-icon" aria-hidden="true"></i>Education</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div><span class="pill">2023 – 2025</span></div>
+            <div>
+              <p class="item-title"><span class="item-org">M.S. in Data Science</span> · University of Memphis · Memphis, TN</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div><span class="pill">2012 – 2014</span></div>
+            <div>
+              <p class="item-title"><span class="item-org">M.S. in Mathematics</span> · Pondicherry University · India</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Certifications ===== -->
+    <section id="certifications">
+      <div class="container">
+        <h2><i class="fa-solid fa-certificate sec-icon" aria-hidden="true"></i>Certifications</h2>
+        <div class="grid-3">
+          <div class="project">
+            <h3>Data Cleaning in Python Essential Training</h3>
+            <p class="muted"><i class="fab fa-linkedin" aria-hidden="true" style="color:#0A66C2"></i> LinkedIn Learning</p>
+            <div class="tags">
+              <span class="tag-sm">Data Cleaning</span>
+              <span class="tag-sm">Python</span>
+            </div>
+          </div>
+          <div class="project">
+            <h3>Advanced SQL for Query Tuning and Performance Optimization</h3>
+            <p class="muted"><i class="fab fa-linkedin" aria-hidden="true" style="color:#0A66C2"></i> LinkedIn Learning</p>
+            <div class="tags">
+              <span class="tag-sm">SQL</span>
+            </div>
+          </div>
+          <div class="project">
+            <h3>Excel: Creating a Basic Dashboard</h3>
+            <p class="muted"><i class="fab fa-linkedin" aria-hidden="true" style="color:#0A66C2"></i> LinkedIn Learning</p>
+            <div class="tags">
+              <span class="tag-sm">Excel Dashboards</span>
+              <span class="tag-sm">Microsoft Excel</span>
+            </div>
+          </div>
+          <div class="project">
+            <h3>SQL for Data Analysis</h3>
+            <p class="muted"><i class="fab fa-linkedin" aria-hidden="true" style="color:#0A66C2"></i> LinkedIn Learning</p>
+            <div class="tags">
+              <span class="tag-sm">SQL</span>
+              <span class="tag-sm">Data Analysis</span>
+            </div>
+          </div>
+          <div class="project">
+            <h3>Presenting Data Effectively to Inform and Inspire</h3>
+            <p class="muted"><i class="fab fa-linkedin" aria-hidden="true" style="color:#0A66C2"></i> LinkedIn Learning</p>
+            <div class="tags">
+              <span class="tag-sm">Data Presentation</span>
+              <span class="tag-sm">Presentation Skills</span>
+            </div>
+          </div>
+        </div>
+        <p class="muted" style="margin-top:16px"><a href="https://www.linkedin.com/in/vishnu-vardhan-rao-v-62977440/details/certifications/" target="_blank" rel="noopener" style="color:var(--accent)">See all certifications on LinkedIn <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></p>
+      </div>
+    </section>
+
     <!-- ===== Contact ===== -->
     <section id="contact">
       <div class="container">
-        <h2>Get In <span style="color:#64FAF5">Touch</span></h2>
+        <h2><i class="fa-solid fa-envelope-open-text sec-icon" aria-hidden="true"></i>Get In <span style="color:#64FAF5">Touch</span></h2>
         <div class="contact-grid">
           <!-- Left: Contact Information -->
           <div class="card">
