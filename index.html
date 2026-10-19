@@ -279,6 +279,14 @@ h2 .sec-icon{ color:var(--accent); margin-right:.55rem; font-size:.9em; width:1.
 #projects{ --sec:#a78bfa; } #education{ --sec:#22c55e; } #certifications{ --sec:#f472b6; } #contact{ --sec:#facc15; }
 section h2{ color:var(--sec, var(--text)); }
 section h2 .sec-icon{ color:var(--sec, var(--accent)); }
+
+/* ===== Header without name: center the menu, keep it visible on phones ===== */
+.nav{ justify-content:center; }
+@media (max-width:640px){
+  .menu{ display:flex !important; flex-wrap:nowrap; overflow-x:auto; gap:.2rem; scrollbar-width:none; }
+  .menu::-webkit-scrollbar{ display:none; }
+  .menu a{ white-space:nowrap; padding:.45rem .6rem; font-size:.9rem; }
+}
   </style>
   <!-- Add under your Font Awesome link -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.17.0/devicon.min.css">
@@ -289,10 +297,6 @@ section h2 .sec-icon{ color:var(--sec, var(--accent)); }
   <!-- ===== Header ===== -->
   <header>
     <div class="container nav">
-      <div class="brand">
-        <span class="dot" aria-hidden="true"></span>
-        <a href="#home">Vishnu Vardhan Rao</a>
-      </div>
       <nav class="menu" aria-label="Primary">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
