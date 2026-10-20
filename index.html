@@ -321,6 +321,16 @@ section h2 .sec-icon{ color:var(--sec, var(--accent)); }
 #skills section .container{ width:100%; }
 .skills-grid{ grid-template-columns:repeat(auto-fill, minmax(130px,1fr)) !important; }
 @media (max-width:420px){ .skills-grid{ grid-template-columns:repeat(2, minmax(0,1fr)) !important; } }
+
+/* ===== Core expertise (from resume) ===== */
+.expertise-title{ margin:34px 0 14px; font-size:1.15rem; color:var(--sec, var(--text)); }
+.expertise-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:18px; }
+.expertise h3{ font-size:1rem; margin:0 0 12px; display:flex; align-items:center; gap:.55rem; }
+.expertise h3 i{ color:var(--sec, var(--accent)); width:1.2em; text-align:center; }
+.expertise .badges{ gap:.45rem; }
+.expertise .badge{ font-size:.82rem; padding:.3rem .6rem; transition:border-color .2s ease, color .2s ease; }
+.expertise .badge:hover{ border-color:var(--sec, var(--accent)); color:var(--text); }
+@media (max-width:420px){ .expertise-grid{ grid-template-columns:1fr; } }
   </style>
   <!-- Add under your Font Awesome link -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.17.0/devicon.min.css">
@@ -457,8 +467,43 @@ section h2 .sec-icon{ color:var(--sec, var(--accent)); }
         <div class="skill-card"><i class="fa-solid fa-link skill-icon c-teal"></i><div class="skill-name">LangChain</div></div>
         <div class="skill-card"><i class="fa-solid fa-diagram-project skill-icon c-purple"></i><div class="skill-name">LangGraph</div></div>
 
+        <!-- Row 6: tools from resume -->
+        <div class="skill-card"><i class="devicon-microsoftsqlserver-plain skill-icon c-red"></i><div class="skill-name">SQL Server</div></div>
+        <div class="skill-card"><i class="fa-solid fa-database skill-icon c-blue"></i><div class="skill-name">BigQuery</div></div>
+        <div class="skill-card"><i class="devicon-azure-plain skill-icon c-azure"></i><div class="skill-name">Azure Data Factory</div></div>
+        <div class="skill-card"><i class="devicon-amazonwebservices-plain-wordmark skill-icon c-orange"></i><div class="skill-name">AWS S3</div></div>
+        <div class="skill-card"><i class="fa-solid fa-wand-magic-sparkles skill-icon c-yellow"></i><div class="skill-name">DAX / Power Query</div></div>
+        <div class="skill-card"><i class="devicon-jira-plain skill-icon c-blue"></i><div class="skill-name">Jira</div></div>
+        <div class="skill-card"><i class="devicon-vscode-plain skill-icon c-azure"></i><div class="skill-name">VS Code</div></div>
+
+
       </div>
     </div>
+
+    <h3 class="expertise-title">Core Expertise</h3>
+    <div class="expertise-grid">
+          <div class="card expertise">
+            <h3><i class="fa-solid fa-magnifying-glass-chart" aria-hidden="true"></i>Data Analysis</h3>
+            <div class="badges"><span class="badge">Data Cleaning</span><span class="badge">Data Validation</span><span class="badge">Data Wrangling</span><span class="badge">Exploratory Data Analysis (EDA)</span><span class="badge">Trend Analysis</span><span class="badge">Root Cause Analysis</span><span class="badge">Variance Analysis</span><span class="badge">Statistical Analysis</span></div>
+          </div>
+          <div class="card expertise">
+            <h3><i class="fa-solid fa-database" aria-hidden="true"></i>Databases and SQL</h3>
+            <div class="badges"><span class="badge">Relational Databases</span><span class="badge">Joins</span><span class="badge">Subqueries</span><span class="badge">Common Table Expressions (CTEs)</span><span class="badge">Window Functions</span><span class="badge">Stored Procedures</span><span class="badge">Query Optimization</span></div>
+          </div>
+          <div class="card expertise">
+            <h3><i class="fa-solid fa-chart-pie" aria-hidden="true"></i>BI and Reporting</h3>
+            <div class="badges"><span class="badge">DAX</span><span class="badge">Power Query</span><span class="badge">PivotTables</span><span class="badge">Lookup Functions</span><span class="badge">Advanced Excel Formulas</span><span class="badge">KPI Reporting</span><span class="badge">Dashboard Development</span></div>
+          </div>
+          <div class="card expertise">
+            <h3><i class="fa-solid fa-diagram-next" aria-hidden="true"></i>Data Engineering and Modeling</h3>
+            <div class="badges"><span class="badge">ETL/ELT</span><span class="badge">Data Pipelines</span><span class="badge">Data Extraction</span><span class="badge">Data Transformation</span><span class="badge">Data Integration</span><span class="badge">Dimensional Modeling</span><span class="badge">Star Schema</span><span class="badge">Semantic Models</span><span class="badge">Data Warehousing</span></div>
+          </div>
+          <div class="card expertise">
+            <h3><i class="fa-solid fa-check-double" aria-hidden="true"></i>Data Quality and Collaboration</h3>
+            <div class="badges"><span class="badge">Data Reconciliation</span><span class="badge">Data Quality Assurance</span><span class="badge">Data Integrity</span><span class="badge">Requirements Gathering</span><span class="badge">Stakeholder Communication</span><span class="badge">Technical Documentation</span></div>
+          </div>
+    </div>
+
 
   </div>
 </section>
