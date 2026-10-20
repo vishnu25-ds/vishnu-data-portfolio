@@ -287,6 +287,33 @@ section h2 .sec-icon{ color:var(--sec, var(--accent)); }
   .menu::-webkit-scrollbar{ display:none; }
   .menu a{ white-space:nowrap; padding:.45rem .6rem; font-size:.9rem; }
 }
+
+/* ===== Left vertical sidebar menu (desktop) ===== */
+.nav-icon{ width:1.2em; text-align:center; margin-right:.55rem; color:var(--c); opacity:.85; }
+@media (min-width:900px){
+  header{
+    position:fixed; top:0; left:0; bottom:0; width:220px;
+    border-bottom:0; border-right:1px solid var(--border);
+    display:flex; align-items:center;
+  }
+  header .container.nav{ width:100%; margin:0; padding:24px 30px 24px 16px; justify-content:flex-start; }
+  .menu{ flex-direction:column; flex-wrap:nowrap; gap:.5rem; width:100%; }
+  .menu a{ display:flex; align-items:center; padding:.65rem .9rem; font-size:1rem; transform-origin:left center; }
+  .menu a:hover, .menu a:focus-visible{ transform:scale(1.12); }
+  main, footer{ margin-left:220px; }
+  .skills-grid{ grid-template-columns:repeat(auto-fill, minmax(120px,1fr)) !important; }
+  html{ scroll-padding-top:16px; }
+}
+
+/* ===== Current section highlight (scroll spy) ===== */
+.menu a.active{
+  color:var(--c); opacity:1;
+  border-color:var(--c);
+  background:color-mix(in srgb, var(--c) 14%, transparent);
+  box-shadow:0 0 14px color-mix(in srgb, var(--c) 35%, transparent);
+}
+@media (min-width:900px){ .menu a.active{ transform:scale(1.12); } }
+@media (prefers-reduced-motion: reduce){ .menu a.active{ transform:none; } }
   </style>
   <!-- Add under your Font Awesome link -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.17.0/devicon.min.css">
@@ -298,13 +325,13 @@ section h2 .sec-icon{ color:var(--sec, var(--accent)); }
   <header>
     <div class="container nav">
       <nav class="menu" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#contact">Contact</a>
+        <a href="#about"><i class="fa-solid fa-user nav-icon" aria-hidden="true"></i>About</a>
+        <a href="#skills"><i class="fa-solid fa-code nav-icon" aria-hidden="true"></i>Skills</a>
+        <a href="#experience"><i class="fa-solid fa-briefcase nav-icon" aria-hidden="true"></i>Experience</a>
+        <a href="#projects"><i class="fa-solid fa-diagram-project nav-icon" aria-hidden="true"></i>Projects</a>
+        <a href="#education"><i class="fa-solid fa-graduation-cap nav-icon" aria-hidden="true"></i>Education</a>
+        <a href="#certifications"><i class="fa-solid fa-certificate nav-icon" aria-hidden="true"></i>Certifications</a>
+        <a href="#contact"><i class="fa-solid fa-envelope-open-text nav-icon" aria-hidden="true"></i>Contact</a>
       </nav>
     </div>
   </header>
@@ -623,6 +650,33 @@ section h2 .sec-icon{ color:var(--sec, var(--accent)); }
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Highlight the menu link for the section currently on screen
+    (function(){
+      var links = Array.prototype.slice.call(document.querySelectorAll('.menu a[href^="#"]'));
+      var items = links.map(function(a){ return { link:a, sec:document.getElementById(a.getAttribute('href').slice(1)) }; })
+                       .filter(function(x){ return x.sec; });
+      var current = null;
+      function update(){
+        var line = window.innerHeight * 0.35, active = null;
+        items.forEach(function(x){ if (x.sec.getBoundingClientRect().top <= line) active = x; });
+        if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) active = items[items.length-1];
+        if (active === current) return;
+        if (current) current.link.classList.remove('active');
+        if (active){
+          active.link.classList.add('active');
+          if (active.link.scrollIntoView && window.innerWidth < 900){
+            active.link.scrollIntoView({block:'nearest', inline:'center'});
+          }
+        }
+        current = active;
+      }
+      var ticking = false;
+      window.addEventListener('scroll', function(){ if(!ticking){ ticking = true; requestAnimationFrame(function(){ ticking = false; update(); }); } }, {passive:true});
+      window.addEventListener('resize', update);
+      update();
+    })();
+
   </script>
 </body>
 </html>
