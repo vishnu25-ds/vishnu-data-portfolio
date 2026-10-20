@@ -301,7 +301,7 @@ section h2 .sec-icon{ color:var(--sec, var(--accent)); }
   .menu a{ display:flex; align-items:center; padding:.65rem .9rem; font-size:1rem; transform-origin:left center; }
   .menu a:hover, .menu a:focus-visible{ transform:scale(1.12); }
   main, footer{ margin-left:220px; }
-  .skills-grid{ grid-template-columns:repeat(auto-fill, minmax(120px,1fr)) !important; }
+
   html{ scroll-padding-top:16px; }
 }
 
@@ -314,6 +314,13 @@ section h2 .sec-icon{ color:var(--sec, var(--accent)); }
 }
 @media (min-width:900px){ .menu a.active{ transform:scale(1.12); } }
 @media (prefers-reduced-motion: reduce){ .menu a.active{ transform:none; } }
+
+/* ===== Skills: use the full width (up to 7 per row like before) ===== */
+#skills .grid-3{ display:block; }
+#skills section{ padding:0; }
+#skills section .container{ width:100%; }
+.skills-grid{ grid-template-columns:repeat(auto-fill, minmax(130px,1fr)) !important; }
+@media (max-width:420px){ .skills-grid{ grid-template-columns:repeat(2, minmax(0,1fr)) !important; } }
   </style>
   <!-- Add under your Font Awesome link -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.17.0/devicon.min.css">
