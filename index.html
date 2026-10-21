@@ -360,6 +360,32 @@ section h2 .sec-icon{ color:var(--sec, var(--accent)); }
 .project-list{ display:flex; flex-direction:column; gap:16px; }
 .project-list .project{ padding:20px 24px; }
 .project-list .project p{ max-width:95ch; }
+
+/* ===== Cards pop out slightly on hover ===== */
+.card, .project, .timeline-item, .skill-group{
+  transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.card:hover, .project:hover, .timeline-item:hover, .skill-group:hover{
+  transform:translateY(-4px) scale(1.012);
+  box-shadow:0 16px 36px rgba(0,0,0,.45);
+  border-color:color-mix(in srgb, var(--sec, var(--accent)) 55%, var(--border));
+}
+.skill-group:hover{ border-color:color-mix(in srgb, var(--g) 55%, var(--border)); }
+
+/* ===== Rainbow name ===== */
+.hero-name span{
+  background:linear-gradient(90deg,#ff4d4d,#ff9f1c,#ffe14d,#4ade80,#22d3ee,#60a5fa,#a78bfa,#f472b6,#ff4d4d);
+  background-size:300% 100%;
+  -webkit-background-clip:text; background-clip:text;
+  -webkit-text-fill-color:transparent; color:transparent;
+  animation:rainbowName 8s linear infinite;
+}
+@keyframes rainbowName{ from{ background-position:0% 50%; } to{ background-position:300% 50%; } }
+
+@media (prefers-reduced-motion: reduce){
+  .card:hover, .project:hover, .timeline-item:hover, .skill-group:hover{ transform:none; }
+  .hero-name span{ animation:none; }
+}
   </style>
   <!-- Add under your Font Awesome link -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.17.0/devicon.min.css">
