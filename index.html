@@ -331,6 +331,30 @@ section h2 .sec-icon{ color:var(--sec, var(--accent)); }
 .expertise .badge{ font-size:.82rem; padding:.3rem .6rem; transition:border-color .2s ease, color .2s ease; }
 .expertise .badge:hover{ border-color:var(--sec, var(--accent)); color:var(--text); }
 @media (max-width:420px){ .expertise-grid{ grid-template-columns:1fr; } }
+
+/* ===== Projects: name, tools, then description ===== */
+#projects .project h3{ font-size:1.1rem; }
+#projects .project .tags{ margin-top:-.1rem; }
+#projects .project .tag-sm{ color:var(--sec, var(--accent)); border-color:color-mix(in srgb, var(--sec, var(--accent)) 40%, var(--border)); }
+#projects .project p{ margin:0; }
+
+/* ===== Skills (grouped, name then small icon) ===== */
+.skill-groups{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:18px; }
+.skill-group{ background:var(--panel); border:1px solid var(--border); border-radius:16px; padding:18px 20px; }
+.skill-group h3{ display:flex; align-items:center; gap:.6rem; margin:0 0 14px; font-size:1.02rem; }
+.skill-group h3 i{ color:var(--g); width:1.2em; text-align:center; }
+.skill-pills{ display:flex; flex-wrap:wrap; gap:.5rem; }
+.skill-pill{
+  display:inline-flex; align-items:center; gap:.45rem;
+  padding:.38rem .7rem; border-radius:999px; font-size:.88rem; line-height:1.2;
+  background:var(--card); border:1px solid var(--border); color:var(--text);
+  transition:border-color .2s ease, transform .2s ease, background-color .2s ease;
+}
+.skill-pill i{ font-size:.95em; color:var(--g); }
+.skill-pill i[class*="devicon-"].colored{ font-size:1em; }
+.skill-pill:hover{ border-color:var(--g); background:color-mix(in srgb, var(--g) 10%, var(--card)); transform:translateY(-2px); }
+@media (max-width:900px){ .skill-groups{ grid-template-columns:1fr; } }
+@media (prefers-reduced-motion: reduce){ .skill-pill:hover{ transform:none; } }
   </style>
   <!-- Add under your Font Awesome link -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.17.0/devicon.min.css">
@@ -414,100 +438,127 @@ section h2 .sec-icon{ color:var(--sec, var(--accent)); }
     <!-- ===== Skills ===== -->
     <section id="skills">
       <div class="container">
-        <div class="grid-3">
-          <section id="skills">
-  <div class="container">
-    <h2><i class="fa-solid fa-code sec-icon" aria-hidden="true"></i>Skills</h2>
-
-    <div class="skills-wrap">
-      <div class="skills-grid">
-
-        <!-- Row 1 -->
-        <div class="skill-card"><i class="devicon-python-plain skill-icon c-teal"></i><div class="skill-name">Python</div></div>
-        <div class="skill-card"><i class="devicon-mysql-plain skill-icon c-yellow"></i><div class="skill-name">SQL (MySQL)</div></div>
-        <div class="skill-card"><i class="devicon-r-plain skill-icon c-blue"></i><div class="skill-name">R</div></div>
-        <div class="skill-card"><i class="devicon-matlab-plain skill-icon c-orange"></i><div class="skill-name">MATLAB</div></div>
-        <div class="skill-card"><i class="devicon-html5-plain skill-icon c-orange"></i><div class="skill-name">HTML</div></div>
-        <div class="skill-card"><i class="devicon-css3-plain skill-icon c-blue"></i><div class="skill-name">CSS</div></div>
-        <div class="skill-card"><i class="devicon-numpy-plain skill-icon c-blue"></i><div class="skill-name">NumPy</div></div>
-
-        <!-- Row 2 -->
-        <div class="skill-card"><i class="devicon-pandas-plain skill-icon c-teal"></i><div class="skill-name">Pandas</div></div>
-        <div class="skill-card"><i class="devicon-scikitlearn-plain skill-icon c-yellow"></i><div class="skill-name">Scikit-learn</div></div>
-        <div class="skill-card"><i class="devicon-matplotlib-plain skill-icon c-purple"></i><div class="skill-name">Matplotlib</div></div>
-        <div class="skill-card"><i class="fa-solid fa-chart-area skill-icon c-teal"></i><div class="skill-name">Seaborn</div></div>
-        <div class="skill-card"><i class="fa-solid fa-language skill-icon c-pink"></i><div class="skill-name">NLTK</div></div>
-        <div class="skill-card"><i class="devicon-apachespark-original skill-icon c-yellow"></i><div class="skill-name">PySpark</div></div>
-        <div class="skill-card"><i class="devicon-tensorflow-original skill-icon c-orange"></i><div class="skill-name">TensorFlow</div></div>
-
-        <!-- Row 3 -->
-        <div class="skill-card"><i class="devicon-pytorch-original skill-icon c-red"></i><div class="skill-name">PyTorch</div></div>
-        <div class="skill-card"><i class="fa-solid fa-chart-column skill-icon c-blue"></i><div class="skill-name">Tableau</div></div>
-        <div class="skill-card"><i class="fa-solid fa-chart-simple skill-icon c-yellow"></i><div class="skill-name">Power BI</div></div>
-        <div class="skill-card"><i class="devicon-mongodb-plain skill-icon c-green"></i><div class="skill-name">MongoDB</div></div>
-        <div class="skill-card"><i class="devicon-googlecloud-plain skill-icon c-blue"></i><div class="skill-name">GCP</div></div>
-        <div class="skill-card"><i class="devicon-googlecloud-plain skill-icon c-azure"></i><div class="skill-name">Cloud SQL</div></div>
-        <div class="skill-card"><i class="devicon-docker-plain skill-icon c-blue"></i><div class="skill-name">Docker</div></div>
-
-        <!-- Row 4 -->
-        <div class="skill-card"><i class="devicon-jupyter-plain skill-icon c-orange"></i><div class="skill-name">Jupyter</div></div>
-        <div class="skill-card"><i class="devicon-git-plain skill-icon c-orange"></i><div class="skill-name">Git</div></div>
-        <div class="skill-card"><i class="devicon-github-original skill-icon c-white"></i><div class="skill-name">GitHub</div></div>
-        <div class="skill-card"><i class="devicon-bash-plain skill-icon c-gray"></i><div class="skill-name">Bash</div></div>
-        <div class="skill-card"><i class="fa-solid fa-spider skill-icon c-pink"></i><div class="skill-name">Web Scraping</div></div>
-        <div class="skill-card"><i class="fa-solid fa-brain skill-icon c-yellow"></i><div class="skill-name">ML</div></div>
-        <div class="skill-card"><i class="fa-solid fa-comments skill-icon c-teal"></i><div class="skill-name">NLP</div></div>
-
-        <!-- Row 5 (optional) -->
-        <div class="skill-card"><i class="fa-solid fa-robot skill-icon c-teal"></i><div class="skill-name">AI Agents</div></div>
-        <div class="skill-card"><i class="fa-solid fa-book skill-icon c-purple"></i><div class="skill-name">LLMs</div></div>
-        <div class="skill-card"><i class="fa-solid fa-brain skill-icon c-teal"></i><div class="skill-name">Deep Learning</div></div>
-        <div class="skill-card"><i class="fa-solid fa-file-excel skill-icon c-green"></i><div class="skill-name">MS Excel</div></div>
-        <div class="skill-card"><i class="fa-solid fa-layer-group skill-icon c-purple"></i><div class="skill-name">Streamlit</div></div>
-        <div class="skill-card"><i class="fa-solid fa-link skill-icon c-teal"></i><div class="skill-name">LangChain</div></div>
-        <div class="skill-card"><i class="fa-solid fa-diagram-project skill-icon c-purple"></i><div class="skill-name">LangGraph</div></div>
-
-        <!-- Row 6: tools from resume -->
-        <div class="skill-card"><i class="devicon-microsoftsqlserver-plain skill-icon c-red"></i><div class="skill-name">SQL Server</div></div>
-        <div class="skill-card"><i class="fa-solid fa-database skill-icon c-blue"></i><div class="skill-name">BigQuery</div></div>
-        <div class="skill-card"><i class="devicon-azure-plain skill-icon c-azure"></i><div class="skill-name">Azure Data Factory</div></div>
-        <div class="skill-card"><i class="devicon-amazonwebservices-plain-wordmark skill-icon c-orange"></i><div class="skill-name">AWS S3</div></div>
-        <div class="skill-card"><i class="fa-solid fa-wand-magic-sparkles skill-icon c-yellow"></i><div class="skill-name">DAX / Power Query</div></div>
-        <div class="skill-card"><i class="devicon-jira-plain skill-icon c-blue"></i><div class="skill-name">Jira</div></div>
-        <div class="skill-card"><i class="devicon-vscode-plain skill-icon c-azure"></i><div class="skill-name">VS Code</div></div>
-
-
-      </div>
-    </div>
-
-    <h3 class="expertise-title">Core Expertise</h3>
-    <div class="expertise-grid">
-          <div class="card expertise">
+        <h2><i class="fa-solid fa-code sec-icon" aria-hidden="true"></i>Skills</h2>
+        <div class="skill-groups">
+          <div class="skill-group" style="--g:#60a5fa">
+            <h3><i class="fa-solid fa-code" aria-hidden="true"></i>Programming and Analysis</h3>
+            <div class="skill-pills">
+              <span class="skill-pill">Python <i class="devicon-python-plain colored" aria-hidden="true"></i></span>
+              <span class="skill-pill">R <i class="devicon-r-plain colored" aria-hidden="true"></i></span>
+              <span class="skill-pill">SQL <i class="fa-solid fa-database" aria-hidden="true"></i></span>
+              <span class="skill-pill">MATLAB <i class="devicon-matlab-plain colored" aria-hidden="true"></i></span>
+              <span class="skill-pill">Bash <i class="devicon-bash-plain colored" aria-hidden="true"></i></span>
+              <span class="skill-pill">HTML <i class="devicon-html5-plain colored" aria-hidden="true"></i></span>
+              <span class="skill-pill">CSS <i class="devicon-css3-plain colored" aria-hidden="true"></i></span>
+              <span class="skill-pill">Pandas <i class="devicon-pandas-plain colored" aria-hidden="true"></i></span>
+              <span class="skill-pill">NumPy <i class="devicon-numpy-plain colored" aria-hidden="true"></i></span>
+              <span class="skill-pill">Matplotlib <i class="devicon-matplotlib-plain colored" aria-hidden="true"></i></span>
+              <span class="skill-pill">Seaborn <i class="fa-solid fa-chart-area" aria-hidden="true"></i></span>
+              <span class="skill-pill">Scikit-learn <i class="devicon-scikitlearn-plain colored" aria-hidden="true"></i></span>
+              <span class="skill-pill">PySpark <i class="devicon-apachespark-original colored" aria-hidden="true"></i></span>
+              <span class="skill-pill">Jupyter Notebook <i class="devicon-jupyter-plain colored" aria-hidden="true"></i></span>
+              <span class="skill-pill">Web Scraping <i class="fa-solid fa-spider" aria-hidden="true"></i></span>
+            </div>
+          </div>
+          <div class="skill-group" style="--g:#a78bfa">
+            <h3><i class="fa-solid fa-brain" aria-hidden="true"></i>Machine Learning and AI</h3>
+            <div class="skill-pills">
+              <span class="skill-pill">Machine Learning <i class="fa-solid fa-brain" aria-hidden="true"></i></span>
+              <span class="skill-pill">Deep Learning <i class="fa-solid fa-network-wired" aria-hidden="true"></i></span>
+              <span class="skill-pill">NLP <i class="fa-solid fa-comments" aria-hidden="true"></i></span>
+              <span class="skill-pill">NLTK <i class="fa-solid fa-language" aria-hidden="true"></i></span>
+              <span class="skill-pill">TensorFlow <i class="devicon-tensorflow-original colored" aria-hidden="true"></i></span>
+              <span class="skill-pill">PyTorch <i class="devicon-pytorch-original colored" aria-hidden="true"></i></span>
+              <span class="skill-pill">LLMs <i class="fa-solid fa-book" aria-hidden="true"></i></span>
+              <span class="skill-pill">LangChain <i class="fa-solid fa-link" aria-hidden="true"></i></span>
+              <span class="skill-pill">LangGraph <i class="fa-solid fa-diagram-project" aria-hidden="true"></i></span>
+              <span class="skill-pill">AI Agents <i class="fa-solid fa-robot" aria-hidden="true"></i></span>
+              <span class="skill-pill">Streamlit <i class="devicon-streamlit-plain colored" aria-hidden="true"></i></span>
+            </div>
+          </div>
+          <div class="skill-group" style="--g:#2dd4bf">
             <h3><i class="fa-solid fa-magnifying-glass-chart" aria-hidden="true"></i>Data Analysis</h3>
-            <div class="badges"><span class="badge">Data Cleaning</span><span class="badge">Data Validation</span><span class="badge">Data Wrangling</span><span class="badge">Exploratory Data Analysis (EDA)</span><span class="badge">Trend Analysis</span><span class="badge">Root Cause Analysis</span><span class="badge">Variance Analysis</span><span class="badge">Statistical Analysis</span></div>
+            <div class="skill-pills">
+              <span class="skill-pill">Data Cleaning <i class="fa-solid fa-broom" aria-hidden="true"></i></span>
+              <span class="skill-pill">Data Validation <i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+              <span class="skill-pill">Data Wrangling <i class="fa-solid fa-shuffle" aria-hidden="true"></i></span>
+              <span class="skill-pill">Exploratory Data Analysis (EDA) <i class="fa-solid fa-magnifying-glass-chart" aria-hidden="true"></i></span>
+              <span class="skill-pill">Trend Analysis <i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i></span>
+              <span class="skill-pill">Root Cause Analysis <i class="fa-solid fa-sitemap" aria-hidden="true"></i></span>
+              <span class="skill-pill">Variance Analysis <i class="fa-solid fa-chart-line" aria-hidden="true"></i></span>
+              <span class="skill-pill">Statistical Analysis <i class="fa-solid fa-square-root-variable" aria-hidden="true"></i></span>
+            </div>
           </div>
-          <div class="card expertise">
+          <div class="skill-group" style="--g:#f59e0b">
             <h3><i class="fa-solid fa-database" aria-hidden="true"></i>Databases and SQL</h3>
-            <div class="badges"><span class="badge">Relational Databases</span><span class="badge">Joins</span><span class="badge">Subqueries</span><span class="badge">Common Table Expressions (CTEs)</span><span class="badge">Window Functions</span><span class="badge">Stored Procedures</span><span class="badge">Query Optimization</span></div>
+            <div class="skill-pills">
+              <span class="skill-pill">SQL Server <i class="devicon-microsoftsqlserver-plain colored" aria-hidden="true"></i></span>
+              <span class="skill-pill">MySQL <i class="devicon-mysql-plain colored" aria-hidden="true"></i></span>
+              <span class="skill-pill">BigQuery <i class="devicon-googlecloud-plain colored" aria-hidden="true"></i></span>
+              <span class="skill-pill">MongoDB <i class="devicon-mongodb-plain colored" aria-hidden="true"></i></span>
+              <span class="skill-pill">Cloud SQL <i class="devicon-googlecloud-plain colored" aria-hidden="true"></i></span>
+              <span class="skill-pill">Relational Databases <i class="fa-solid fa-table" aria-hidden="true"></i></span>
+              <span class="skill-pill">Joins <i class="fa-solid fa-code-merge" aria-hidden="true"></i></span>
+              <span class="skill-pill">Subqueries <i class="fa-solid fa-layer-group" aria-hidden="true"></i></span>
+              <span class="skill-pill">CTEs <i class="fa-solid fa-diagram-next" aria-hidden="true"></i></span>
+              <span class="skill-pill">Window Functions <i class="fa-solid fa-table-columns" aria-hidden="true"></i></span>
+              <span class="skill-pill">Stored Procedures <i class="fa-solid fa-scroll" aria-hidden="true"></i></span>
+              <span class="skill-pill">Query Optimization <i class="fa-solid fa-gauge-high" aria-hidden="true"></i></span>
+            </div>
           </div>
-          <div class="card expertise">
-            <h3><i class="fa-solid fa-chart-pie" aria-hidden="true"></i>BI and Reporting</h3>
-            <div class="badges"><span class="badge">DAX</span><span class="badge">Power Query</span><span class="badge">PivotTables</span><span class="badge">Lookup Functions</span><span class="badge">Advanced Excel Formulas</span><span class="badge">KPI Reporting</span><span class="badge">Dashboard Development</span></div>
+          <div class="skill-group" style="--g:#facc15">
+            <h3><i class="fa-solid fa-chart-pie" aria-hidden="true"></i>Business Intelligence and Reporting</h3>
+            <div class="skill-pills">
+              <span class="skill-pill">Power BI <i class="fa-solid fa-chart-simple" aria-hidden="true"></i></span>
+              <span class="skill-pill">Tableau <i class="fa-solid fa-chart-column" aria-hidden="true"></i></span>
+              <span class="skill-pill">Microsoft Excel <i class="fa-solid fa-file-excel" aria-hidden="true"></i></span>
+              <span class="skill-pill">DAX <i class="fa-solid fa-calculator" aria-hidden="true"></i></span>
+              <span class="skill-pill">Power Query <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></span>
+              <span class="skill-pill">PivotTables <i class="fa-solid fa-table-cells" aria-hidden="true"></i></span>
+              <span class="skill-pill">Lookup Functions <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></span>
+              <span class="skill-pill">Advanced Excel Formulas <i class="fa-solid fa-superscript" aria-hidden="true"></i></span>
+              <span class="skill-pill">KPI Reporting <i class="fa-solid fa-bullseye" aria-hidden="true"></i></span>
+              <span class="skill-pill">Dashboard Development <i class="fa-solid fa-gauge" aria-hidden="true"></i></span>
+            </div>
           </div>
-          <div class="card expertise">
+          <div class="skill-group" style="--g:#22c55e">
             <h3><i class="fa-solid fa-diagram-next" aria-hidden="true"></i>Data Engineering and Modeling</h3>
-            <div class="badges"><span class="badge">ETL/ELT</span><span class="badge">Data Pipelines</span><span class="badge">Data Extraction</span><span class="badge">Data Transformation</span><span class="badge">Data Integration</span><span class="badge">Dimensional Modeling</span><span class="badge">Star Schema</span><span class="badge">Semantic Models</span><span class="badge">Data Warehousing</span></div>
+            <div class="skill-pills">
+              <span class="skill-pill">ETL/ELT <i class="fa-solid fa-right-left" aria-hidden="true"></i></span>
+              <span class="skill-pill">Data Pipelines <i class="fa-solid fa-timeline" aria-hidden="true"></i></span>
+              <span class="skill-pill">Data Extraction <i class="fa-solid fa-file-export" aria-hidden="true"></i></span>
+              <span class="skill-pill">Data Transformation <i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i></span>
+              <span class="skill-pill">Data Integration <i class="fa-solid fa-object-group" aria-hidden="true"></i></span>
+              <span class="skill-pill">Dimensional Modeling <i class="fa-solid fa-cube" aria-hidden="true"></i></span>
+              <span class="skill-pill">Star Schema <i class="fa-solid fa-star" aria-hidden="true"></i></span>
+              <span class="skill-pill">Semantic Models <i class="fa-solid fa-share-nodes" aria-hidden="true"></i></span>
+              <span class="skill-pill">Data Warehousing <i class="fa-solid fa-warehouse" aria-hidden="true"></i></span>
+            </div>
           </div>
-          <div class="card expertise">
+          <div class="skill-group" style="--g:#38bdf8">
+            <h3><i class="fa-solid fa-cloud" aria-hidden="true"></i>Cloud and Development Tools</h3>
+            <div class="skill-pills">
+              <span class="skill-pill">GCP <i class="devicon-googlecloud-plain colored" aria-hidden="true"></i></span>
+              <span class="skill-pill">Azure Data Factory <i class="devicon-azure-plain colored" aria-hidden="true"></i></span>
+              <span class="skill-pill">AWS S3 <i class="fa-brands fa-aws" aria-hidden="true"></i></span>
+              <span class="skill-pill">Docker <i class="devicon-docker-plain colored" aria-hidden="true"></i></span>
+              <span class="skill-pill">Git <i class="devicon-git-plain colored" aria-hidden="true"></i></span>
+              <span class="skill-pill">GitHub <i class="fa-brands fa-github" aria-hidden="true"></i></span>
+              <span class="skill-pill">Jira <i class="devicon-jira-plain colored" aria-hidden="true"></i></span>
+              <span class="skill-pill">VS Code <i class="devicon-vscode-plain colored" aria-hidden="true"></i></span>
+            </div>
+          </div>
+          <div class="skill-group" style="--g:#f472b6">
             <h3><i class="fa-solid fa-check-double" aria-hidden="true"></i>Data Quality and Collaboration</h3>
-            <div class="badges"><span class="badge">Data Reconciliation</span><span class="badge">Data Quality Assurance</span><span class="badge">Data Integrity</span><span class="badge">Requirements Gathering</span><span class="badge">Stakeholder Communication</span><span class="badge">Technical Documentation</span></div>
+            <div class="skill-pills">
+              <span class="skill-pill">Data Reconciliation <i class="fa-solid fa-scale-balanced" aria-hidden="true"></i></span>
+              <span class="skill-pill">Data Quality Assurance <i class="fa-solid fa-check-double" aria-hidden="true"></i></span>
+              <span class="skill-pill">Data Integrity <i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
+              <span class="skill-pill">Requirements Gathering <i class="fa-solid fa-clipboard-list" aria-hidden="true"></i></span>
+              <span class="skill-pill">Stakeholder Communication <i class="fa-solid fa-users" aria-hidden="true"></i></span>
+              <span class="skill-pill">Technical Documentation <i class="fa-solid fa-file-lines" aria-hidden="true"></i></span>
+            </div>
           </div>
-    </div>
-
-
-  </div>
-</section>
-
         </div>
       </div>
     </section>
@@ -552,32 +603,81 @@ section h2 .sec-icon{ color:var(--sec, var(--accent)); }
         <h2><i class="fa-solid fa-diagram-project sec-icon" aria-hidden="true"></i>Projects</h2>
         <div class="grid-3">
           <div class="project">
-            <h3>Search Engine Interface (Web Scraping)</h3>
-            <p class="muted">Python-Flask app that scrapes sites and ranks results via cosine similarity; reduced search time by 35% and improved relevance by 25% after text cleaning and stemming.</p>
+            <h3>Real Estate House Price Prediction</h3>
             <div class="tags">
               <span class="tag-sm">Python</span>
-              <span class="tag-sm">Flask</span>
-              <span class="tag-sm">NLP</span>
-              <span class="tag-sm">Cosine Similarity</span>
+              <span class="tag-sm">Scikit-learn</span>
+              <span class="tag-sm">XGBoost</span>
+              <span class="tag-sm">LightGBM</span>
+              <span class="tag-sm">CatBoost</span>
             </div>
+            <p class="muted">Predicted home sale prices from 81 features of the Kaggle housing dataset. Handled missing values and outliers, engineered features, used recursive feature elimination, and tuned models with grid search. The boosting models reached R² = 0.90 on test data, with CatBoost achieving the lowest error.</p>
           </div>
           <div class="project">
             <h3>Predictive Insights into Hotel Reservations</h3>
-            <p class="muted">Analyzed booking data to uncover cancellation trends and peak periods, improving forecast accuracy by 20% and room utilization by 15%.</p>
             <div class="tags">
-              <span class="tag-sm">Pandas</span>
-              <span class="tag-sm">Visualization</span>
-              <span class="tag-sm">Forecasting</span>
+              <span class="tag-sm">R</span>
+              <span class="tag-sm">Classification</span>
+              <span class="tag-sm">KNN</span>
+              <span class="tag-sm">LDA</span>
+              <span class="tag-sm">Logistic Regression</span>
             </div>
+            <p class="muted">Predicted whether hotel bookings would be cancelled using 36,275 reservations. After exploratory analysis and feature selection, I compared logistic regression, LDA, KNN and Naive Bayes. KNN performed best, with 84.65% accuracy, 79.43% precision and a 75.68% F1-score.</p>
           </div>
           <div class="project">
-            <h3>Real Estate Price Prediction</h3>
-            <p class="muted">Built Linear Regression, Random Forest, and XGBoost models to predict prices; achieved R² = 0.92 on test data and reduced RMSE by 18% through feature engineering and outlier treatment.</p>
+            <h3>Infectious Disease Trends and Google Search Analysis</h3>
             <div class="tags">
-              <span class="tag-sm">Scikit-learn</span>
+              <span class="tag-sm">R</span>
+              <span class="tag-sm">arules</span>
+              <span class="tag-sm">Caret</span>
               <span class="tag-sm">XGBoost</span>
-              <span class="tag-sm">Feature Engineering</span>
+              <span class="tag-sm">Neural Networks</span>
             </div>
+            <p class="muted">Analyzed about 37,000 weekly disease records across 48 US states (2015–2017), linking case counts to Google search trends, travel and demographics. The work covered visualization, yearly aggregation, self-organizing maps, Apriori and ECLAT association rules (up to 96% confidence), and classification with decision trees, gradient boosting, XGBoost, logistic regression and neural networks, evaluated on precision, recall, F1 and AUC.</p>
+          </div>
+          <div class="project">
+            <h3>Fast Food Nutrition Clustering</h3>
+            <div class="tags">
+              <span class="tag-sm">R</span>
+              <span class="tag-sm">tidyverse</span>
+              <span class="tag-sm">ggplot2</span>
+              <span class="tag-sm">K-Means</span>
+              <span class="tag-sm">Random Forest</span>
+            </div>
+            <p class="muted">Explored nutrition data for menu items across fast food chains, comparing trans fat, cholesterol and total fat by restaurant and by bacon items using ggplot2. Clustered items with k-means, then trained a random forest with 10-fold cross-validation that predicted cluster membership with 95.3% accuracy.</p>
+          </div>
+          <div class="project">
+            <h3>Uber Data Analysis</h3>
+            <div class="tags">
+              <span class="tag-sm">Python</span>
+              <span class="tag-sm">Pandas</span>
+              <span class="tag-sm">Seaborn</span>
+              <span class="tag-sm">LightGBM</span>
+              <span class="tag-sm">XGBoost</span>
+            </div>
+            <p class="muted">Analyzed Uber ride data to find patterns in trip purpose, pickup and drop-off locations, and time of day, then predicted trip distance. Cleaned the data, treated outliers and added time-based features, then compared regression models from linear regression to ensembles. LightGBM, Linear SVR and KNN performed best.</p>
+          </div>
+          <div class="project">
+            <h3>Gold Price Prediction</h3>
+            <div class="tags">
+              <span class="tag-sm">Python</span>
+              <span class="tag-sm">Scikit-learn</span>
+              <span class="tag-sm">Random Forest</span>
+              <span class="tag-sm">SVR</span>
+              <span class="tag-sm">KNN</span>
+            </div>
+            <p class="muted">Forecast gold prices (GLD) from 2,290 days of market data, using the S&amp;P 500, oil, silver and the EUR/USD rate as predictors. Covered data cleaning, correlation analysis and visualization, then compared random forest, decision tree, support vector, linear and KNN regression.</p>
+          </div>
+          <div class="project">
+            <h3>Search Engine with Web Scraping</h3>
+            <div class="tags">
+              <span class="tag-sm">Python</span>
+              <span class="tag-sm">Web Scraping</span>
+              <span class="tag-sm">NLP</span>
+              <span class="tag-sm">TF-IDF</span>
+              <span class="tag-sm">Cosine Similarity</span>
+            </div>
+            <p class="muted">Built a search engine for the University of Memphis website. It crawls up to 10,000 pages, then cleans, tokenizes and stems the text, removes stop words, and ranks pages by TF-IDF cosine similarity. Evaluated it on 10 test queries using precision, recall and F1-score.</p>
           </div>
         </div>
       </div>
